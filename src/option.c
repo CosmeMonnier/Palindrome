@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 08:21:32 2017 romain pillot
-** Last update Thu Jun 15 11:42:13 2017 romain pillot
+** Last update Thu Jun 15 14:35:24 2017 romain pillot
 */
 
 #include <stdlib.h>
@@ -16,10 +16,10 @@ static bool	loop_content(t_options *options, char **args, int *i)
 {
   if ((str_equals(args[(*i)], "-n") && (options->mode = TRANSFORM)) ||
       (str_equals(args[(*i)], "-p") && (options->mode = REVERSE)))
-    if (options->i != NULL || !args[++(*i)])
+    if (options->i >= 0 || !args[++(*i)])
       return (false);
     else
-      options->i = args[(*i)];
+      options->i = atoi(args[(*i)]);
   else if (str_equals(args[(*i)], "-b"))
     if (options->base != -1 || !args[++(*i)])
       return (false);
@@ -61,7 +61,7 @@ static bool	valid_options(t_options *options)
   if (options->max == -1)
     options->max = 100;
   return (options->mode != UNDEFINED &&
-	  options->i != NULL &&
+	  options->i >= 0 &&
 	  options->min >= 0 && options->max >= 0 &&
 	  options->min <= options->max &&
 	  options->base > 0 && options->base <= 10);
@@ -73,7 +73,7 @@ t_options	*load_options(char **args)
 
   if (!(options = malloc(sizeof(t_options))))
     return (NULL);
-  options->i = NULL;
+  options->i = -1;
   options->mode = UNDEFINED;
   options->base = -1;
   options->min = -1;
