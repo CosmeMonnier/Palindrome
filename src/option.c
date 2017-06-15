@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 08:21:32 2017 romain pillot
-** Last update Thu Jun 15 09:43:50 2017 romain pillot
+** Last update Thu Jun 15 09:57:13 2017 romain pillot
 */
 
 #include <stdlib.h>
@@ -25,16 +25,19 @@ static bool	loop_content(t_options *options, char **args, int *i)
       return (false);
     else
       options->base = atoi(args[(*i)]);
-  else if (str_equals(args[(*i)], "imin"))
+  else if (str_equals(args[(*i)], "-imin"))
     if (options->min != -1 || !args[++(*i)])
       return (false);
     else
       options->min = atoi(args[(*i)]);
-  else if (str_equals(args[(*i)], "imax"))
+  else if (str_equals(args[(*i)], "-imax"))
     if (options->max != -1 || !args[++(*i)])
       return (false);
     else
       options->max= atoi(args[(*i)]);
+  else
+    return (false);
+  return (true);
 }
 
 static bool	parse_options(t_options *options, char **args)
@@ -42,9 +45,10 @@ static bool	parse_options(t_options *options, char **args)
   int		i;
   bool		reverse;
 
-  i = -1;
+  i = 0;
   while (args[++i])
-    loop_content(options, args, &i);
+    if (!loop_content(options, args, &i))
+      return (false);
   return (true);
 }
 
