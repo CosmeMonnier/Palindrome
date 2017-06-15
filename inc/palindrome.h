@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Nov 24 11:15:51 2016 romain pillot
-** Last update Thu Jun 15 09:39:11 2017 romain pillot
+** Last update Thu Jun 15 13:59:49 2017 romain pillot
 */
 
 #ifndef PALINDROME_H_
@@ -23,7 +23,7 @@ typedef enum	e_mode
 
 typedef struct	s_options
 {
-  int		i;
+  char		*i;
   t_mode	mode;
   int		base;
   int		min;
@@ -31,5 +31,8 @@ typedef struct	s_options
 }		t_options;
 
 t_options	*load_options(char **args);
+
+/* @Params: nbr >= 0 and 0 > base <= 10 */
+char		*base10_convert(int nbr, int base);
 
 #endif /** !PALINDROME_H_ **/

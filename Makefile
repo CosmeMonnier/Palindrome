@@ -5,7 +5,7 @@
 ## Login   <romain.pillot@epitech.net>
 ## 
 ## Started on  Sun Jun  4 17:02:11 2017 romain pillot
-## Last update Thu Jun 15 09:39:33 2017 romain pillot
+## Last update Thu Jun 15 14:18:45 2017 romain pillot
 ##
 
 CC	=	gcc
@@ -15,6 +15,7 @@ NAME	=	palindrome
 RM	=	rm -f
 
 SRCS	=	src/main.c			\
+		src/math.c			\
 		src/option.c			\
 		src/util/print.c		\
 		src/util/read.c			\
@@ -32,6 +33,7 @@ SRCS	=	src/main.c			\
 		src/util/str/str_length.c	\
 		src/util/str/str_reduce.c	\
 		src/util/str/str_split.c	\
+		src/util/str/str_reverse.c	\
 		src/util/str/str_concat.c
 
 OBJS	=	$(SRCS:.c=.o)
