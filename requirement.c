@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 07:05:30 2017 romain pillot
-** Last update Thu Jun 15 07:47:12 2017 romain pillot
+** Last update Thu Jun 15 08:07:06 2017 romain pillot
 */
 
 #include <stdlib.h>
@@ -25,8 +25,6 @@ int		my_squareroot_synthesis(int nb)
 
   if (nb > INT_MAX || nb < 0)
     return (-1);
-  else if (nb == 0)
-    return (0);
   mid = nb / 2 + (!(nb % 2) ? 0 : 1);
   while ((result = mid * mid) != nb)
     if (result < nb)
