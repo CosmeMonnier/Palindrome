@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue May 23 14:02:04 2017 romain pillot
-** Last update Thu Jun 15 14:18:04 2017 romain pillot
+** Last update Fri Jun 16 07:23:49 2017 romain pillot
 */
 
 #ifndef UTIL_H_
@@ -26,6 +26,8 @@ void	tab_sort(char **tab);
 bool	tab_contains(char **tab, const char *str);
 
 int	nbr_parsestring(const char *str);
+
+bool	str_isnumber(const char *str);
 
 char	*str_reverse(char *str);
 

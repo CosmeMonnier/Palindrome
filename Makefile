@@ -5,7 +5,7 @@
 ## Login   <romain.pillot@epitech.net>
 ## 
 ## Started on  Sun Jun  4 17:02:11 2017 romain pillot
-## Last update Fri Jun 16 05:13:35 2017 romain pillot
+## Last update Fri Jun 16 07:39:09 2017 romain pillot
 ##
 
 CC	=	gcc
@@ -35,7 +35,8 @@ SRCS	=	src/main.c			\
 		src/util/str/str_reduce.c	\
 		src/util/str/str_split.c	\
 		src/util/str/str_reverse.c	\
-		src/util/str/str_concat.c
+		src/util/str/str_concat.c	\
+		src/util/str/str_isnumber.c
 
 OBJS	=	$(SRCS:.c=.o)
 

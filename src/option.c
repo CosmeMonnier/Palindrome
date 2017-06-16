@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 08:21:32 2017 romain pillot
-** Last update Fri Jun 16 05:13:24 2017 romain pillot
+** Last update Fri Jun 16 07:38:06 2017 romain pillot
 */
 
 #include <stdlib.h>
@@ -16,7 +16,7 @@ static bool	loop_content(t_options *options, char **args, int *i)
 {
   if ((str_equals(args[(*i)], "-n") && (options->mode = &find_palindrome)) ||
       (str_equals(args[(*i)], "-p") && (options->mode = &reverse_palindrome)))
-    if (options->i >= 0 || !args[++(*i)])
+    if (options->i >= 0 || !str_isnumber(args[++(*i)]))
       return (false);
     else
       options->i = atoi(args[(*i)]);
@@ -26,12 +26,12 @@ static bool	loop_content(t_options *options, char **args, int *i)
     else
       options->base = atoi(args[(*i)]);
   else if (str_equals(args[(*i)], "-imin"))
-    if (options->min != -1 || !args[++(*i)])
+    if (options->min != -1 || !str_isnumber(args[++(*i)]))
       return (false);
     else
       options->min = atoi(args[(*i)]);
   else if (str_equals(args[(*i)], "-imax"))
-    if (options->max != -1 || !args[++(*i)])
+    if (options->max != -1 || !str_isnumber(args[++(*i)]))
       return (false);
     else
       options->max= atoi(args[(*i)]);
