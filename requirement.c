@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 07:05:30 2017 romain pillot
-** Last update Fri Jun 16 02:50:06 2017 romain pillot
+** Last update Fri Jun 16 05:15:03 2017 romain pillot
 */
 
 #include <stdlib.h>
@@ -34,9 +34,9 @@ int		my_squareroot_synthesis(int nb)
   while (++i < 1000)
     {
       mid = (lo+hi)/2;
-      if(((int)mid)*((int)mid) == nb)
+      if (((int)mid)*((int)mid) == nb)
 	return (mid);
-      if(mid*mid > nb)
+      if (mid*mid > nb)
 	hi = mid;
       else
 	lo = mid;
