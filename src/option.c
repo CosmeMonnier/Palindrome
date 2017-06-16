@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 08:21:32 2017 romain pillot
-** Last update Fri Jun 16 04:27:45 2017 romain pillot
+** Last update Fri Jun 16 05:02:21 2017 romain pillot
 */
 
 #include <stdlib.h>
@@ -14,8 +14,8 @@
 
 static bool	loop_content(t_options *options, char **args, int *i)
 {
-  if ((str_equals(args[(*i)], "-n") && (options->mode = TRANSFORM)) ||
-      (str_equals(args[(*i)], "-p") && (options->mode = REVERSE)))
+  if ((str_equals(args[(*i)], "-n") && (options->mode = &find_palindrome)) ||
+      (str_equals(args[(*i)], "-p") && (options->mode = &reverse_palindrome)))
     if (options->i >= 0 || !args[++(*i)])
       return (false);
     else
@@ -60,10 +60,10 @@ static bool	valid_options(t_options *options)
     options->min = 0;
   if (options->max == -1)
     options->max = 100;
-  if (options->mode == REVERSE && options->i >= 0 &&
+  if (options->mode == &reverse_palindrome && options->i >= 0 &&
       !is_palindrome(options->i, options->base))
     return (false);
-  return (options->mode != UNDEFINED &&
+  return (options->mode != NULL &&
 	  options->i >= 0 &&
 	  options->min >= 0 && options->max >= 0 &&
 	  options->min <= options->max &&
@@ -77,7 +77,7 @@ t_options	*load_options(char **args)
   if (!(options = malloc(sizeof(t_options))))
     return (NULL);
   options->i = -1;
-  options->mode = UNDEFINED;
+  options->mode = NULL;
   options->base = -1;
   options->min = -1;
   options->max = -1;

@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Nov 24 11:15:51 2016 romain pillot
-** Last update Fri Jun 16 04:27:26 2017 romain pillot
+** Last update Fri Jun 16 04:58:21 2017 romain pillot
 */
 
 #ifndef PALINDROME_H_
@@ -14,19 +14,14 @@
 # define _EXIT_FAILURE	(84)
 # define _EXIT_SUCCESS	(0)
 
-# include <stdbool.h>
+# define NONE		(-1)
 
-typedef enum	e_mode
-{
-  UNDEFINED = 0,
-  TRANSFORM = 1,
-  REVERSE = 2
-}		t_mode;
+# include <stdbool.h>
 
 typedef struct	s_options
 {
   int		i;
-  t_mode	mode;
+  void		(*mode)(struct s_options *options);
   int		base;
   int		min;
   int		max;

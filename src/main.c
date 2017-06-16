@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Nov 24 11:14:29 2016 romain pillot
-** Last update Thu Jun 15 15:09:54 2017 romain pillot
+** Last update Fri Jun 16 04:58:05 2017 romain pillot
 */
 
 #include <stdio.h>
@@ -22,10 +22,7 @@ int		main(int ac, char **args)
       fprintf(stderr, "invalid argument\n");
       return (_EXIT_FAILURE);
     }
-  if (options->mode == REVERSE)
-    reverse_palindrome(options);
-  else
-    find_palindrome(options);
+  options->mode(options);
   free(options);
   return (_EXIT_SUCCESS);
 }
