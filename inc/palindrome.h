@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Nov 24 11:15:51 2016 romain pillot
-** Last update Fri Jun 16 04:58:21 2017 romain pillot
+** Last update Fri Jun 16 05:09:04 2017 romain pillot
 */
 
 #ifndef PALINDROME_H_
@@ -38,7 +38,7 @@ void		reverse_palindrome(t_options *options);
 /* @Params: nbr >= 0 and 0 > base <= 10 */
 char		*base10_convert(int nbr, int base);
 
-/* Reverse */
+/* Revert to base10 from any base */
 int		convert_tobase10(char *nbr, int base);
 
 #endif /** !PALINDROME_H_ **/
