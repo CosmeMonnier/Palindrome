@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 11:44:25 2017 romain pillot
-** Last update Thu Jun 15 15:00:41 2017 romain pillot
+** Last update Fri Jun 16 03:17:28 2017 romain pillot
 */
 
 #include <stdlib.h>
@@ -15,28 +15,26 @@
 #include "palindrome.h"
 #include "util.h"
 
-static bool	is_palindrome(int nbr, int base)
+/* @Params: convert nbr from any base to base10 */
+int	convert_tobase10(char *nbr, int base)
 {
-  char		*number;
-  char		*reversed;
-  bool		valid;
+  int	result;
+  int	k;
+  int	len;
+  int	i;
+  int	j;
 
-  number = base10_convert(nbr, base);
-  reversed = str_reverse(strdup(number));
-  valid = str_equals(number, reversed);
-  FREE(number);
-  FREE(reversed);
-  return (valid);
-}
-
-void	reverse_palindrome(t_options *opt)
-{
-  
-}
-
-void	find_palindrome(t_options *opt)
-{
-  
+  len = strlen(nbr);
+  result = (j = 0);
+  while (--len >= 0 && ++j)
+    {
+      k = 1;
+      i = -1;
+      while (++i < j - 1)
+	k *= base;
+      result += k * (nbr[len] - '0');
+    }
+  return (result);
 }
 
 /* @Params: nbr >= 0 and 1 > base <= 10 */

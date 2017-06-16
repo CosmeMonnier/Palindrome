@@ -5,7 +5,7 @@
 ## Login   <romain.pillot@epitech.net>
 ## 
 ## Started on  Sun Jun  4 17:02:11 2017 romain pillot
-## Last update Thu Jun 15 14:18:45 2017 romain pillot
+## Last update Thu Jun 15 15:46:22 2017 romain pillot
 ##
 
 CC	=	gcc
@@ -15,6 +15,7 @@ NAME	=	palindrome
 RM	=	rm -f
 
 SRCS	=	src/main.c			\
+		src/solver.c			\
 		src/math.c			\
 		src/option.c			\
 		src/util/print.c		\

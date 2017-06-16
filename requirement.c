@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 07:05:30 2017 romain pillot
-** Last update Thu Jun 15 08:07:06 2017 romain pillot
+** Last update Fri Jun 16 02:50:06 2017 romain pillot
 */
 
 #include <stdlib.h>
@@ -18,18 +18,28 @@ int	my_factrec_synthesis(int nb)
 	  nb * my_factrec_synthesis(nb - 1));
 }
 
+/*
+** Binarys search algorithm, reducing interval / 2
+*/
 int		my_squareroot_synthesis(int nb)
 {
-  long long	mid;
-  long long	result;
+  double	lo;
+  double	hi;
+  double	mid;
+  int		i;
 
-  if (nb > INT_MAX || nb < 0)
-    return (-1);
-  mid = nb / 2 + (!(nb % 2) ? 0 : 1);
-  while ((result = mid * mid) != nb)
-    if (result < nb)
-      return (-1);
-    else
-      mid--;
-  return (mid);
+  lo = 0;
+  hi = nb;
+  i = -1;
+  while (++i < 1000)
+    {
+      mid = (lo+hi)/2;
+      if(((int)mid)*((int)mid) == nb)
+	return (mid);
+      if(mid*mid > nb)
+	hi = mid;
+      else
+	lo = mid;
+    }
+  return (-1);
 }
