@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 15:45:23 2017 romain pillot
-** Last update Fri Jun 16 05:07:03 2017 romain pillot
+** Last update Fri Jun 16 05:13:12 2017 romain pillot
 */
 
 #include <string.h>
@@ -32,7 +32,6 @@ static bool	find_palindrome_private(t_options *opt, int def, bool debug)
   int		count;
   bool		valid;
   char		*reversed;
-  int		solved;
   int		nbr;
 
   count = 0;

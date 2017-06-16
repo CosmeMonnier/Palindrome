@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 08:21:32 2017 romain pillot
-** Last update Fri Jun 16 05:02:21 2017 romain pillot
+** Last update Fri Jun 16 05:13:24 2017 romain pillot
 */
 
 #include <stdlib.h>
@@ -43,7 +43,6 @@ static bool	loop_content(t_options *options, char **args, int *i)
 static bool	parse_options(t_options *options, char **args)
 {
   int		i;
-  bool		reverse;
 
   i = 0;
   while (args[++i])
