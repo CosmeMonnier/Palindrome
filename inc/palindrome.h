@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Nov 24 11:15:51 2016 romain pillot
-** Last update Fri Jun 16 03:03:47 2017 romain pillot
+** Last update Fri Jun 16 04:27:26 2017 romain pillot
 */
 
 #ifndef PALINDROME_H_
@@ -13,6 +13,8 @@
 
 # define _EXIT_FAILURE	(84)
 # define _EXIT_SUCCESS	(0)
+
+# include <stdbool.h>
 
 typedef enum	e_mode
 {
@@ -31,6 +33,8 @@ typedef struct	s_options
 }		t_options;
 
 t_options	*load_options(char **args);
+
+bool		is_palindrome(int nbr, int base);
 
 void		find_palindrome(t_options *options);
 

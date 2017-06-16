@@ -5,14 +5,15 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 15:45:23 2017 romain pillot
-** Last update Fri Jun 16 03:42:16 2017 romain pillot
+** Last update Fri Jun 16 04:28:20 2017 romain pillot
 */
 
 #include <string.h>
+#include <stdio.h>
 #include "palindrome.h"
 #include "util.h"
 
-static bool     is_palindrome(int nbr, int base)
+bool     is_palindrome(int nbr, int base)
 {
   char          *number;
   char          *reversed;
@@ -28,7 +29,16 @@ static bool     is_palindrome(int nbr, int base)
 
 void    reverse_palindrome(t_options *opt)
 {
-  
+  int	nbr;
+  int	i;
+
+  nbr = opt->i;
+  i = 0;
+  while (++i <= nbr)
+    {
+      opt->i = i;
+      find_palindrome(opt);
+    }
 }
 
 void    find_palindrome(t_options *opt)

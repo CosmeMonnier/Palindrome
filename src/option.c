@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Thu Jun 15 08:21:32 2017 romain pillot
-** Last update Thu Jun 15 14:35:24 2017 romain pillot
+** Last update Fri Jun 16 04:27:45 2017 romain pillot
 */
 
 #include <stdlib.h>
@@ -60,6 +60,9 @@ static bool	valid_options(t_options *options)
     options->min = 0;
   if (options->max == -1)
     options->max = 100;
+  if (options->mode == REVERSE && options->i >= 0 &&
+      !is_palindrome(options->i, options->base))
+    return (false);
   return (options->mode != UNDEFINED &&
 	  options->i >= 0 &&
 	  options->min >= 0 && options->max >= 0 &&
